@@ -19,7 +19,8 @@ while True:
      break
  elif format == '3':
      s = input('Digite o MEC: ')
-     test = ''.join(filter(lambda i: i if i.isdigit() else None, s))
+     s = s.replace(':', '')
+     test = ''.join(s[i:i + 2] for i in range(0, 12, 2))
      cnpj = test[:4] + "-" + test[4:8] + "-" + test[8:12]
      print(cnpj)
      break
